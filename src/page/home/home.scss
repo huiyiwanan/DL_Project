@@ -1,0 +1,307 @@
+@import '~common/css/mixins.scss';
+@import '~common/css/constant.scss';
+
+.home-container.el-container {
+  height: 100%;
+  padding-top: 60px;
+  box-sizing: border-box;
+}
+
+.home-main.el-main {
+  color: #333;
+  text-align: center;
+  line-height: 160px;
+}
+
+.el-aside.oms-aside {
+  border-right: 1px solid #dedede;
+  color: #b8b9bc;
+  text-align: center;
+  //$asideW
+  width: 2.35rem;
+  height: 100%;
+  overflow-x: hidden;
+
+  .el-submenu {
+
+    &.is-active .el-submenu__title,
+    .el-submenu__title {}
+  }
+}
+
+.oms-menu {
+
+  &.el-menu,
+  .el-menu {
+    border-right: none;
+  }
+
+  .oms-sub-menu {
+    text-align: left;
+
+    &.el-menu-item {
+      padding-right: 0;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+  }
+
+  .icon-144003,
+  .icon-144001,
+  .icon-144002,
+  .icon-144004,
+  .icon-144005,
+  .icon-144006,
+  .icon-144007,
+  .icon-144008 {
+    // background-image: url('~@/common/img/menuicon.png')
+  }
+
+  .icon-144003 {
+    background-position: -20px -1px;
+
+    &.current-title {
+      background-position: -20px -21px;
+    }
+  }
+
+  .icon-144001 {
+    background-position: -40px -1px;
+
+    &.current-title {
+      background-position: -40px -21px;
+    }
+  }
+
+  .icon-144002 {
+    background-position: -60px -1px;
+
+    &.current-title {
+      background-position: -60px -21px;
+    }
+  }
+
+  .icon-144004 {
+    background-position: 0px -1px;
+
+    &.current-title {
+      background-position: 0px -21px;
+    }
+  }
+
+  .icon-144005 {
+    background-position: 0px -42px;
+
+    &.current-title {
+      background-position: 0px -62px;
+    }
+  }
+
+  .icon-144006 {
+    background-position: -20px -42px;
+
+    &.current-title {
+      background-position: -20px -62px;
+    }
+  }
+
+
+  .icon-144007 {
+    background-position: -40px -42px;
+
+    &.current-title {
+      background-position: -40px -62px;
+    }
+  }
+
+  .icon-144008 {
+    background-position: -60px -42px;
+
+    &.current-title {
+      background-position: -60px -62px;
+    }
+  }
+
+  .el-submenu__title {
+    text-align: left;
+    color: #fff;
+
+    &:hover {}
+
+    i {
+      font-weight: bold;
+      // color: #fff;
+    }
+  }
+
+  .el-menu-item {
+
+    &.is-active,
+    &:hover,
+    &:focus {}
+
+    &.active-menu {
+      background-color: #ecf5ff;
+      color: $focusColor !important;
+      // border-right: 3px solid $focusColor;
+    }
+
+    &.non-active-menu {
+      color: #b8b9bc !important;
+    }
+  }
+
+  .current-title {
+    color: #fff;
+    color: $focusColor !important;
+  }
+}
+
+.oms-main {
+  position: absolute;
+  left: 2.35rem;
+  right: 0;
+  top: 60px;
+  bottom: 0;
+  color: #2e2c2c;
+}
+
+.el-table pre {
+  margin: 0;
+}
+
+.basic-icon {
+  padding: 0 10px;
+  margin-right: 10px;
+  line-height: 23px;
+
+}
+
+.el-submenu .el-menu-item.oms-side-menu {
+  height: 40px;
+  line-height: 40px;
+  text-align: left;
+
+  .el-submenu__icon-arrow {
+    display: none;
+  }
+}
+
+.oms-sub-menu {
+  .el-submenu__title {
+    height: 50px;
+    line-height: 50px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+
+    &::after {
+      content: '';
+      width: 12px;
+      height: 7px;
+      position: absolute;
+      right: 23px;
+      top: 21px;
+      transition: transform .6s;
+    }
+
+    .oms-sub-menu-title {
+      margin-top: -3px;
+    }
+
+    .el-submenu__icon-arrow {
+      right: 0.05rem;
+    }
+
+  }
+
+  &.is-opened {
+    .el-submenu__title {
+      &::after {
+        @include css3(transform,
+          rotate(180deg));
+      }
+    }
+
+    .el-menu--inline li {
+      overflow: hidden;
+      text-overflow: ellipsis;
+      padding-right: 0;
+    }
+  }
+
+}
+
+.oms-header.el-header {
+  padding: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  left: 0;
+}
+
+//表格内部样式
+.click-to-edit {
+  color: #0054ff;
+  cursor: pointer;
+}
+
+//编辑页面样式
+.el-header.edit-page-header {
+  border-bottom: 1px solid #dedede;
+}
+
+.edit-page-breadcrumb.el-breadcrumb {
+  line-height: 40px;
+}
+
+//面包屑导航
+.el-breadcrumb__inner {
+  cursor: pointer !important;
+}
+
+.edit-page {
+  padding: 10px;
+  overflow-x: hidden;
+
+  .el-form-item__content {
+
+    >.el-input--mini,
+    >.el-select--mini {
+      width: 100%;
+      max-width: 160px;
+      vertical-align: middle;
+    }
+
+    .el-upload {
+      .el-button {
+        width: 160px;
+      }
+    }
+
+    .el-upload-list {
+      width: 160px;
+    }
+  }
+
+  .edit-page-footer {
+    .el-button {
+      padding: 7px 46px;
+    }
+  }
+}
+
+/*覆盖树的样式*/
+.el-tree-node__content {
+  height: 36px;
+}
+
+.el-tree-node__content>.el-checkbox {}
+
+.el-tree-node__label {
+  display: inline-block;
+  height: 30px;
+  border: 1px solid $inputBorderColor;
+  border-radius: 4px;
+  padding: 0 15px;
+  line-height: 30px;
+}

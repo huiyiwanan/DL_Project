@@ -1,0 +1,125 @@
+@import '~common/css/constant.scss';
+
+$fontColor: #272727;
+$bg: #fff;
+
+/*
+  上下左右都居中
+*/
+.whcenter {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  position: absolute;
+}
+
+.login-bg {
+  height: 100%;
+  width: 100%;
+  background: #fff;
+  min-height: 450px;
+  background: url('~@/common/img/background.png') no-repeat;
+  background-size: 100% 100%;
+}
+
+.login-box {
+  width: 431px;
+  height: 428px;
+  background-color: #ffffff;
+  border-radius: 4px;
+  padding: 40px 75px 35px;
+  @extend .whcenter;
+
+  .login-submit-box {
+    margin-bottom: 0;
+  }
+}
+
+.login-form {
+  width: 282px;
+  height: 100%;
+  background: #fff;
+  z-index: 100;
+  text-align: center;
+}
+
+.login-btn {
+  margin-top: 15px;
+  width: 282px;
+  height: 44px;
+  background-image: linear-gradient(360deg, #618aff 0%, #4474fb 100%);
+  box-shadow: 0px 3px 6px 0px rgba(97, 138, 255, 0.22);
+  border: none;
+}
+
+.error-tip {
+  width: 100%;
+  height: 34px;
+  margin: 0;
+  padding: 0;
+  line-height: 34px;
+  text-align: left;
+  color: $errorColor;
+}
+
+.login-text {
+  margin: 8px 0 0;
+  color: #464f60;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.rotate180 {
+  line-height: 60px;
+  transform: rotate(180deg);
+  font-size: 18px;
+}
+
+.login-register {
+  background: $bg;
+  color: $fontColor;
+}
+
+.login-register {
+  height: 60px;
+  width: 460px;
+  line-height: 60px;
+  position: absolute;
+  right: 0;
+  padding: 0 40px;
+  bottom: 0;
+  cursor: pointer;
+
+  &:hover {
+    background: #eee;
+  }
+
+  &:before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 1px;
+    background: #ddd;
+    left: 0;
+    box-shadow: 0 -2px 6px #ddd;
+  }
+}
+
+.forget-pwd {
+  color: #306bff;
+  float: right;
+  height: 30px;
+  line-height: 14px;
+  font-size: 14px;
+  cursor: pointer;
+  margin-top: 12px;
+
+  &:hover {
+    color: #0b4ae8;
+  }
+}
+
+.langMenu {
+  margin-top: 35px;
+  padding-left: 76px;
+}
